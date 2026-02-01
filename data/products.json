@@ -1,0 +1,76 @@
+[
+  {
+    "id": "cctv-4ch-kit",
+    "name": "4-Channel CCTV Kit (DVR + Cameras)",
+    "category": "CCTV",
+    "brandId": "cp-plus",
+    "shortDescription": "Reliable starter kit for small offices and homes. DVR, cameras, cabling options.",
+    "tags": ["DVR", "Indoor", "Outdoor"],
+    "image": "/products/cctv-kit.svg"
+  },
+  {
+    "id": "ip-camera-2mp",
+    "name": "2MP IP Camera (PoE)",
+    "category": "CCTV",
+    "brandId": "hikvision",
+    "shortDescription": "PoE-ready IP camera for crisp day/night monitoring with efficient installation.",
+    "tags": ["IP", "PoE", "Night Vision"],
+    "image": "/products/ip-camera.svg",
+    "amazonUrl": "https://www.amazon.in/"
+  },
+  {
+    "id": "nvr-8ch",
+    "name": "8-Channel NVR",
+    "category": "CCTV",
+    "brandId": "dahua",
+    "shortDescription": "Expandable NVR suitable for multi-camera IP setups, with remote viewing support.",
+    "tags": ["NVR", "IP", "Remote View"],
+    "image": "/products/nvr.svg"
+  },
+  {
+    "id": "router-wifi6",
+    "name": "Wi‑Fi 6 Dual‑Band Router",
+    "category": "Networking",
+    "brandId": "tplink",
+    "shortDescription": "Modern Wi‑Fi 6 performance for fast browsing, streaming, and stable coverage.",
+    "tags": ["Wi‑Fi 6", "Dual Band"],
+    "image": "/products/router.svg",
+    "amazonUrl": "https://www.amazon.in/"
+  },
+  {
+    "id": "switch-24p-gigabit",
+    "name": "24‑Port Gigabit Switch",
+    "category": "Networking",
+    "brandId": "cisco",
+    "shortDescription": "Business-grade switching for reliable connectivity across office networks.",
+    "tags": ["Switch", "Gigabit", "Rack"],
+    "image": "/products/switch.svg"
+  },
+  {
+    "id": "access-point",
+    "name": "Ceiling Access Point",
+    "category": "Networking",
+    "brandId": "ubiquiti",
+    "shortDescription": "Professional access point for clean installs and strong multi-device coverage.",
+    "tags": ["AP", "Ceiling", "Enterprise"],
+    "image": "/products/access-point.svg"
+  },
+  {
+    "id": "biometric-attendance",
+    "name": "Biometric Attendance Machine",
+    "category": "Access Control",
+    "brandId": "cp-plus",
+    "shortDescription": "Fingerprint attendance device for staff entry and attendance logging.",
+    "tags": ["Fingerprint", "Office"],
+    "image": "/products/biometric.svg"
+  },
+  {
+    "id": "video-door-phone",
+    "name": "Video Door Phone",
+    "category": "Security",
+    "brandId": "hikvision",
+    "shortDescription": "Secure entry with video calling and monitoring for homes and offices.",
+    "tags": ["Door Phone", "Intercom"],
+    "image": "/products/video-door-phone.svg"
+  }
+]

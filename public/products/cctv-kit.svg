@@ -1,0 +1,16 @@
+<svg width="640" height="420" viewBox="0 0 640 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="640" y2="420" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0B1220"/>
+      <stop offset="1" stop-color="#111827"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="420" rx="28" fill="url(#bg)"/>
+  <rect x="60" y="98" width="220" height="150" rx="18" fill="#1F2937" stroke="#334155"/>
+  <rect x="90" y="128" width="160" height="90" rx="14" fill="#0F172A" stroke="#475569"/>
+  <circle cx="170" cy="173" r="18" fill="#2563EB"/>
+  <rect x="330" y="120" width="250" height="56" rx="16" fill="#1F2937" stroke="#334155"/>
+  <rect x="330" y="196" width="250" height="56" rx="16" fill="#1F2937" stroke="#334155"/>
+  <text x="60" y="330" fill="#E5E7EB" font-size="30" font-family="Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial" font-weight="700">CCTV Kit</text>
+  <text x="60" y="364" fill="#94A3B8" font-size="18" font-family="Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial">DVR + Cameras</text>
+</svg>

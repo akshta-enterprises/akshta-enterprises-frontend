@@ -1,0 +1,15 @@
+<svg width="640" height="420" viewBox="0 0 640 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="640" y2="420" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#F1F5F9"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="420" rx="28" fill="url(#bg)"/>
+  <rect x="200" y="110" width="240" height="210" rx="26" fill="#0B1220"/>
+  <rect x="228" y="140" width="184" height="62" rx="16" fill="#111827" stroke="#334155"/>
+  <circle cx="320" cy="250" r="50" fill="#111827" stroke="#2563EB" stroke-width="4"/>
+  <path d="M300 250c0-18 40-18 40 0s-40 18-40 0Z" fill="#2563EB"/>
+  <text x="60" y="330" fill="#0B1220" font-size="30" font-family="Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial" font-weight="700">Biometric Device</text>
+  <text x="60" y="364" fill="#334155" font-size="18" font-family="Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial">Attendance</text>
+</svg>

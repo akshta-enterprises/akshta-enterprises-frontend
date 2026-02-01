@@ -1,26 +1,49 @@
 @import "tailwindcss";
 
+/* Tailwind v4 theme tokens (via @theme). */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --ae-blue: #2563eb;
+  --ae-red: #dc2626;
+  --ae-black: #0b1220;
+
+  --ae-bg: #ffffff;
+  --ae-fg: #0b1220;
+  --ae-muted: #475569;
+
+  --ae-border: rgba(15, 23, 42, 0.10);
+  --ae-card: rgba(255, 255, 255, 0.75);
+  --ae-card-strong: rgba(255, 255, 255, 0.92);
+
+  --ae-ring: rgba(37, 99, 235, 0.35);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-background: var(--ae-bg);
+  --color-foreground: var(--ae-fg);
+
+  --color-ae-blue: var(--ae-blue);
+  --color-ae-red: var(--ae-red);
+  --color-ae-black: var(--ae-black);
+
+  /* Inter is bundled via @fontsource-variable/inter (see layout.tsx). */
+  --font-sans: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html,
+body {
+  height: 100%;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background:
+    radial-gradient(1200px 600px at 10% 0%, rgba(37, 99, 235, 0.12), transparent 55%),
+    radial-gradient(900px 520px at 90% 10%, rgba(220, 38, 38, 0.10), transparent 55%),
+    linear-gradient(#ffffff, #ffffff);
+  color: var(--ae-fg);
+}
+
+/* Improve focus visibility site-wide */
+:focus-visible {
+  outline: 2px solid var(--ae-ring);
+  outline-offset: 2px;
 }

@@ -1,0 +1,32 @@
+[
+  {
+    "id": "cp-plus",
+    "name": "CP PLUS",
+    "logo": "/brands/cpplus.svg"
+  },
+  {
+    "id": "hikvision",
+    "name": "Hikvision",
+    "logo": "/brands/hikvision.svg"
+  },
+  {
+    "id": "dahua",
+    "name": "Dahua",
+    "logo": "/brands/dahua.svg"
+  },
+  {
+    "id": "tplink",
+    "name": "TP-Link",
+    "logo": "/brands/tplink.svg"
+  },
+  {
+    "id": "cisco",
+    "name": "Cisco",
+    "logo": "/brands/cisco.svg"
+  },
+  {
+    "id": "ubiquiti",
+    "name": "Ubiquiti",
+    "logo": "/brands/ubiquiti.svg"
+  }
+]

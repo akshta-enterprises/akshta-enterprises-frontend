@@ -1,0 +1,17 @@
+<svg width="640" height="420" viewBox="0 0 640 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="640" y2="420" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FEE2E2"/>
+      <stop offset="1" stop-color="#FFFFFF"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="420" rx="28" fill="url(#bg)"/>
+  <rect x="150" y="190" width="340" height="90" rx="22" fill="#0B1220"/>
+  <circle cx="210" cy="235" r="7" fill="#22C55E"/>
+  <circle cx="240" cy="235" r="7" fill="#22C55E"/>
+  <circle cx="270" cy="235" r="7" fill="#22C55E"/>
+  <path d="M230 180c30-34 150-34 180 0" stroke="#2563EB" stroke-width="8" stroke-linecap="round"/>
+  <path d="M256 160c26-26 96-26 122 0" stroke="#93C5FD" stroke-width="8" stroke-linecap="round"/>
+  <text x="60" y="330" fill="#0B1220" font-size="30" font-family="Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial" font-weight="700">WiFi 6 Router</text>
+  <text x="60" y="364" fill="#991B1B" font-size="18" font-family="Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial">Fast + stable</text>
+</svg>

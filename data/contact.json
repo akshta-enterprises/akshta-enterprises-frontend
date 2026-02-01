@@ -1,0 +1,18 @@
+{
+  "companyName": "Akshta Enterprises",
+  "tagline": "Security, Networking & IT Hardware Distribution",
+  "primaryEmail": "sales@akshtaenterprises.in",
+  "phone": "+91 90000 00000",
+  "whatsapp": "+919717828719",
+  "addressLines": [
+    "Akshta Enterprises",
+    "Your Street, Your Area",
+    "Kashipur, Uttarakhand, India - 5600XX"
+  ],
+  "hours": [
+    { "label": "Mon - Sat", "value": "10:00 AM - 7:00 PM" },
+    { "label": "Sunday", "value": "Closed" }
+  ],
+
+  "mapEmbedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.5619074180163!2d77.22693477429272!3d28.612916684973396!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce2daa9eb4d0b%3A0x717971125923e5d!2sIndia%20Gate!5e0!3m2!1sen!2sin!4v1769706294438!5m2!1sen!2sin"
+}

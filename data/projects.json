@@ -1,0 +1,26 @@
+[
+  {
+    "id": "office-cctv-install",
+    "title": "Office CCTV Upgrade",
+    "client": "SME Office (Bengaluru)",
+    "description": "Upgraded from analog to IP cameras with PoE switching and remote monitoring.",
+    "image": "/projects/office-cctv.svg",
+    "tags": ["CCTV", "PoE", "Remote View"]
+  },
+  {
+    "id": "warehouse-network",
+    "title": "Warehouse Networking Setup",
+    "client": "Warehouse (Karnataka)",
+    "description": "Structured network design with managed switching and reliable Wi‑Fi coverage.",
+    "image": "/projects/warehouse-network.svg",
+    "tags": ["Networking", "Switching", "Wi‑Fi"]
+  },
+  {
+    "id": "access-control",
+    "title": "Access Control & Attendance",
+    "client": "Retail Chain",
+    "description": "Attendance deployment with biometric devices and door access integration.",
+    "image": "/projects/access-control.svg",
+    "tags": ["Access Control", "Attendance"]
+  }
+]
