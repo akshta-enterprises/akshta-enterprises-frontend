@@ -2,9 +2,20 @@
 
 import { useMemo, useState } from "react";
 import emailjs from "@emailjs/browser";
-import { CheckCircleIcon, ExclamationTriangleIcon } from "@heroicons/react/24/outline";
+import {
+  CheckCircleIcon,
+  ExclamationTriangleIcon,
+} from "@heroicons/react/24/outline";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
+
+const EMAILJS_SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+const EMAILJS_TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+const EMAILJS_PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
+
+if (!EMAILJS_SERVICE_ID || !EMAILJS_TEMPLATE_ID || !EMAILJS_PUBLIC_KEY) {
+  console.warn("EmailJS env vars missing. Contact form will not work.");
+}
 
 type FormState = {
   name: string;
@@ -19,17 +30,21 @@ function isValidEmail(email: string) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim());
 }
 
-function requiredEnv(name: string): string {
-  const value = process.env[name];
-  if (!value) {
-    throw new Error(
-      `Missing required environment variable: ${name}. Add it to .env.local.`,
-    );
-  }
-  return value;
-}
+// function requiredEnv(name: string): string {
+//   const value = process.env[name];
+//   if (!value) {
+//     throw new Error(
+//       `Missing required environment variable: ${name}. Add it to .env.local.`,
+//     );
+//   }
+//   return value;
+// }
 
-export function ContactForm({ interestOptions }: { interestOptions: string[] }) {
+export function ContactForm({
+  interestOptions,
+}: {
+  interestOptions: string[];
+}) {
   const [state, setState] = useState<FormState>({
     name: "",
     email: "",
@@ -51,6 +66,12 @@ export function ContactForm({ interestOptions }: { interestOptions: string[] }) 
     );
   }, [state]);
 
+  console.log("EmailJS envs:", {
+    service: process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+    template: process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+    key: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY,
+  });
+
   async function onSubmit(e: React.FormEvent) {
     e.preventDefault();
     setResult("idle");
@@ -58,15 +79,21 @@ export function ContactForm({ interestOptions }: { interestOptions: string[] }) 
 
     if (!canSubmit) {
       setResult("error");
-      setErrorMessage("Please fill all required fields with valid information.");
+      setErrorMessage(
+        "Please fill all required fields with valid information.",
+      );
       return;
     }
 
     setSubmitting(true);
     try {
-      const serviceId = requiredEnv("NEXT_PUBLIC_EMAILJS_SERVICE_ID");
-      const templateId = requiredEnv("NEXT_PUBLIC_EMAILJS_TEMPLATE_ID");
-      const publicKey = requiredEnv("NEXT_PUBLIC_EMAILJS_PUBLIC_KEY");
+      const serviceId = EMAILJS_SERVICE_ID;
+      const templateId = EMAILJS_TEMPLATE_ID;
+      const publicKey = EMAILJS_PUBLIC_KEY;
+
+      if (!serviceId || !templateId || !publicKey) {
+        throw new Error("Missing EmailJS environment variables");
+      }
 
       await emailjs.send(
         serviceId,
@@ -118,7 +145,9 @@ export function ContactForm({ interestOptions }: { interestOptions: string[] }) 
             </label>
             <input
               value={state.name}
-              onChange={(e) => setState((s) => ({ ...s, name: e.target.value }))}
+              onChange={(e) =>
+                setState((s) => ({ ...s, name: e.target.value }))
+              }
               className="mt-2 w-full rounded-2xl border border-black/10 bg-white/80 px-4 py-3 text-sm text-ae-black placeholder:text-slate-400 focus:outline-none"
               placeholder="Your full name"
               autoComplete="name"
@@ -131,7 +160,9 @@ export function ContactForm({ interestOptions }: { interestOptions: string[] }) 
             </label>
             <input
               value={state.email}
-              onChange={(e) => setState((s) => ({ ...s, email: e.target.value }))}
+              onChange={(e) =>
+                setState((s) => ({ ...s, email: e.target.value }))
+              }
               className="mt-2 w-full rounded-2xl border border-black/10 bg-white/80 px-4 py-3 text-sm text-ae-black placeholder:text-slate-400 focus:outline-none"
               placeholder="you@company.com"
               autoComplete="email"
@@ -153,7 +184,9 @@ export function ContactForm({ interestOptions }: { interestOptions: string[] }) 
             </label>
             <input
               value={state.phone}
-              onChange={(e) => setState((s) => ({ ...s, phone: e.target.value }))}
+              onChange={(e) =>
+                setState((s) => ({ ...s, phone: e.target.value }))
+              }
               className="mt-2 w-full rounded-2xl border border-black/10 bg-white/80 px-4 py-3 text-sm text-ae-black placeholder:text-slate-400 focus:outline-none"
               placeholder="+91 9XXXXXXXXX"
               autoComplete="tel"
@@ -162,10 +195,14 @@ export function ContactForm({ interestOptions }: { interestOptions: string[] }) 
             />
           </div>
           <div>
-            <label className="text-xs font-bold text-slate-700">Product Interest</label>
+            <label className="text-xs font-bold text-slate-700">
+              Product Interest
+            </label>
             <select
               value={state.interest}
-              onChange={(e) => setState((s) => ({ ...s, interest: e.target.value }))}
+              onChange={(e) =>
+                setState((s) => ({ ...s, interest: e.target.value }))
+              }
               className="mt-2 w-full rounded-2xl border border-black/10 bg-white/80 px-4 py-3 text-sm font-semibold text-ae-black focus:outline-none"
             >
               {interestOptions.map((o) => (
@@ -183,14 +220,16 @@ export function ContactForm({ interestOptions }: { interestOptions: string[] }) 
           </label>
           <textarea
             value={state.message}
-            onChange={(e) => setState((s) => ({ ...s, message: e.target.value }))}
+            onChange={(e) =>
+              setState((s) => ({ ...s, message: e.target.value }))
+            }
             className="mt-2 min-h-32 w-full resize-y rounded-2xl border border-black/10 bg-white/80 px-4 py-3 text-sm text-ae-black placeholder:text-slate-400 focus:outline-none"
             placeholder="Tell us what you need (site size, quantity, model preference, delivery location, etc.)"
             required
           />
           <div className="mt-2 text-xs text-slate-500">
-            Minimum recommended: 10 characters. Include quantity and location for faster
-            quotes.
+            Minimum recommended: 10 characters. Include quantity and location
+            for faster quotes.
           </div>
         </div>
 
@@ -228,4 +267,3 @@ export function ContactForm({ interestOptions }: { interestOptions: string[] }) 
     </Card>
   );
 }
-
