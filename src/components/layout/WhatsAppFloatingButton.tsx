@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ChatBubbleOvalLeftEllipsisIcon } from "@heroicons/react/24/solid";
+import { WhatsAppIcon } from "../icons/whatsAppIcon";
 import { buildWhatsAppLink } from "@/lib/whatsapp";
 import { cn } from "@/lib/utils";
 
@@ -12,7 +12,10 @@ export function WhatsAppFloatingButton({
 }) {
   return (
     <Link
-      href={buildWhatsAppLink(phone, "Hi! I’d like to enquire about your products.")}
+      href={buildWhatsAppLink(
+        phone,
+        "Hi! I’d like to enquire about your products.",
+      )}
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chat on WhatsApp"
@@ -21,9 +24,8 @@ export function WhatsAppFloatingButton({
         className,
       )}
     >
-      <ChatBubbleOvalLeftEllipsisIcon className="h-6 w-6" />
+      <WhatsAppIcon className="h-6 w-6" />
       <span className="hidden sm:inline">WhatsApp</span>
     </Link>
   );
 }
-
