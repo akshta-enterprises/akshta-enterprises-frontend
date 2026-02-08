@@ -30,16 +30,6 @@ function isValidEmail(email: string) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim());
 }
 
-// function requiredEnv(name: string): string {
-//   const value = process.env[name];
-//   if (!value) {
-//     throw new Error(
-//       `Missing required environment variable: ${name}. Add it to .env.local.`,
-//     );
-//   }
-//   return value;
-// }
-
 export function ContactForm({
   interestOptions,
 }: {
@@ -65,12 +55,6 @@ export function ContactForm({
       state.message.trim().length >= 10
     );
   }, [state]);
-
-  console.log("EmailJS envs:", {
-    service: process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
-    template: process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
-    key: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY,
-  });
 
   async function onSubmit(e: React.FormEvent) {
     e.preventDefault();
