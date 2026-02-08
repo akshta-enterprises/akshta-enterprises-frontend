@@ -4,7 +4,10 @@ export default function Home() {
 
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRightIcon, BuildingOffice2Icon } from "@heroicons/react/24/outline";
+import {
+  ArrowRightIcon,
+  BuildingOffice2Icon,
+} from "@heroicons/react/24/outline";
 import { getBrands, getContact, getProducts } from "@/lib/data";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
@@ -18,7 +21,10 @@ function HomeLanding() {
   const brands = getBrands();
   const products = getProducts();
 
-  const categories = Array.from(new Set(products.map((p) => p.category))).slice(0, 6);
+  const categories = Array.from(new Set(products.map((p) => p.category))).slice(
+    0,
+    6,
+  );
 
   return (
     <div>
@@ -40,9 +46,9 @@ function HomeLanding() {
                 <span className="text-ae-blue"> sourced</span> with confidence.
               </h1>
               <p className="mt-4 text-base leading-7 text-slate-600 sm:text-lg">
-                {contact.companyName} supplies CCTV, networking, access control, and IT
-                hardware for homes, offices, warehouses, and enterprise deployments across
-                India.
+                {contact.companyName} supplies CCTV, networking, access control,
+                and IT hardware for homes, offices, warehouses, and enterprise
+                deployments across India.
               </p>
 
               <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center">
@@ -73,7 +79,9 @@ function HomeLanding() {
                     <div className="text-sm font-extrabold tracking-tight text-ae-black">
                       {x.k}
                     </div>
-                    <div className="mt-1 text-xs leading-5 text-slate-600">{x.v}</div>
+                    <div className="mt-1 text-xs leading-5 text-slate-600">
+                      {x.v}
+                    </div>
                   </div>
                 ))}
               </div>
@@ -122,8 +130,8 @@ function HomeLanding() {
                       Need help choosing?
                     </div>
                     <div className="mt-1 text-xs leading-5 text-slate-600">
-                      Tell us your site size and requirement — we’ll recommend the right
-                      products.
+                      Tell us your site size and requirement — we’ll recommend
+                      the right products.
                     </div>
                     <div className="mt-3">
                       <Button href="/contact" variant="secondary">
@@ -181,8 +189,8 @@ function HomeLanding() {
                     Get pricing and availability today.
                   </h3>
                   <p className="mt-3 text-sm leading-6 text-slate-600">
-                    Share your product interest and quantity — we’ll respond with options,
-                    pricing, and delivery timelines.
+                    Share your product interest and quantity — we’ll respond
+                    with options, pricing, and delivery timelines.
                   </p>
 
                   <div className="mt-6 flex flex-col gap-3 sm:flex-row">
@@ -208,11 +216,21 @@ function HomeLanding() {
                   <div className="mt-3 space-y-2 text-sm text-slate-700">
                     <div>
                       <span className="font-bold text-ae-black">Phone:</span>{" "}
-                      {contact.phone}
+                      <a
+                        href={`tel:${contact.phone}`}
+                        className="text-ae-blue hover:underline"
+                      >
+                        {contact.phone}
+                      </a>
                     </div>
                     <div>
                       <span className="font-bold text-ae-black">Email:</span>{" "}
-                      {contact.primaryEmail}
+                      <a
+                        href={`mailto:${contact.primaryEmail}`}
+                        className="text-ae-blue hover:underline"
+                      >
+                        {contact.primaryEmail}
+                      </a>
                     </div>
                     <div className="pt-2">
                       <div className="font-bold text-ae-black">Address</div>
@@ -223,12 +241,19 @@ function HomeLanding() {
                   </div>
 
                   <div className="mt-6 rounded-2xl bg-white/70 p-4 ring-1 ring-black/10">
-                    <div className="text-xs font-bold text-slate-700">Business hours</div>
+                    <div className="text-xs font-bold text-slate-700">
+                      Business hours
+                    </div>
                     <div className="mt-2 space-y-1 text-sm text-slate-700">
                       {contact.hours.map((h) => (
-                        <div key={h.label} className="flex items-center justify-between">
+                        <div
+                          key={h.label}
+                          className="flex items-center justify-between"
+                        >
                           <span className="text-slate-600">{h.label}</span>
-                          <span className="font-semibold text-ae-black">{h.value}</span>
+                          <span className="font-semibold text-ae-black">
+                            {h.value}
+                          </span>
                         </div>
                       ))}
                     </div>

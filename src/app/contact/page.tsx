@@ -1,6 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { MapPinIcon, PhoneIcon, EnvelopeIcon, ClockIcon } from "@heroicons/react/24/outline";
+import {
+  MapPinIcon,
+  PhoneIcon,
+  EnvelopeIcon,
+  ClockIcon,
+} from "@heroicons/react/24/outline";
 import { getContact, getProducts } from "@/lib/data";
 import { Container } from "@/components/ui/Container";
 import { Card } from "@/components/ui/Card";
@@ -19,8 +24,8 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   const contact = getContact();
   const products = getProducts();
-  const categories = Array.from(new Set(products.map((p) => p.category))).sort((a, b) =>
-    a.localeCompare(b),
+  const categories = Array.from(new Set(products.map((p) => p.category))).sort(
+    (a, b) => a.localeCompare(b),
   );
 
   const interestOptions = ["General Enquiry", ...categories];
@@ -55,14 +60,28 @@ export default function ContactPage() {
                       <PhoneIcon className="mt-0.5 h-5 w-5 flex-none text-ae-blue" />
                       <div>
                         <div className="font-bold text-ae-black">Phone</div>
-                        <div>{contact.phone}</div>
+                        <div>
+                          <a
+                            href={`tel:${contact.phone}`}
+                            className="text-ae-blue hover:underline"
+                          >
+                            {contact.phone}
+                          </a>
+                        </div>
                       </div>
                     </div>
                     <div className="flex gap-3">
                       <EnvelopeIcon className="mt-0.5 h-5 w-5 flex-none text-ae-blue" />
                       <div>
                         <div className="font-bold text-ae-black">Email</div>
-                        <div>{contact.primaryEmail}</div>
+                        <div>
+                          <a
+                            href={`mailto:${contact.primaryEmail}`}
+                            className="text-ae-blue hover:underline"
+                          >
+                            {contact.primaryEmail}
+                          </a>
+                        </div>
                       </div>
                     </div>
                     <div className="flex gap-3">
@@ -82,9 +101,14 @@ export default function ContactPage() {
                         <div className="font-bold text-ae-black">Hours</div>
                         <div className="mt-1 grid gap-1 text-slate-600">
                           {contact.hours.map((h) => (
-                            <div key={h.label} className="flex justify-between gap-3">
+                            <div
+                              key={h.label}
+                              className="flex justify-between gap-3"
+                            >
                               <span>{h.label}</span>
-                              <span className="font-semibold text-ae-black">{h.value}</span>
+                              <span className="font-semibold text-ae-black">
+                                {h.value}
+                              </span>
                             </div>
                           ))}
                         </div>
@@ -140,4 +164,3 @@ export default function ContactPage() {
     </div>
   );
 }
-

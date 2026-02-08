@@ -14,7 +14,9 @@ export function SiteFooter() {
             <div className="text-lg font-extrabold tracking-tight text-ae-black">
               {contact.companyName}
             </div>
-            <p className="mt-2 text-sm leading-6 text-slate-600">{contact.tagline}</p>
+            <p className="mt-2 text-sm leading-6 text-slate-600">
+              {contact.tagline}
+            </p>
             <div className="mt-4 flex gap-3 text-sm">
               <Link
                 href={buildWhatsAppLink(contact.whatsapp)}
@@ -24,7 +26,10 @@ export function SiteFooter() {
               >
                 WhatsApp
               </Link>
-              <Link href="/contact" className="font-semibold text-ae-blue hover:underline">
+              <Link
+                href="/contact"
+                className="font-semibold text-ae-blue hover:underline"
+              >
                 Contact
               </Link>
             </div>
@@ -54,8 +59,22 @@ export function SiteFooter() {
           <div>
             <div className="text-sm font-bold text-ae-black">Contact</div>
             <div className="mt-3 text-sm leading-6 text-slate-700">
-              <div>{contact.phone}</div>
-              <div className="text-slate-600">{contact.primaryEmail}</div>
+              <div>
+                <a
+                  href={`tel:${contact.phone}`}
+                  className="text-ae-blue hover:underline"
+                >
+                  {contact.phone}
+                </a>
+              </div>
+              <div className="text-slate-600">
+                <a
+                  href={`mailto:${contact.primaryEmail}`}
+                  className="text-ae-blue hover:underline"
+                >
+                  {contact.primaryEmail}
+                </a>
+              </div>
               <div className="mt-3 text-slate-600">
                 {contact.addressLines.map((line) => (
                   <div key={line}>{line}</div>
@@ -67,7 +86,8 @@ export function SiteFooter() {
 
         <div className="mt-10 flex flex-col gap-2 border-t border-black/10 pt-6 text-xs text-slate-600 sm:flex-row sm:items-center sm:justify-between">
           <div>
-            © {new Date().getFullYear()} {contact.companyName}. All rights reserved.
+            © {new Date().getFullYear()} {contact.companyName}. All rights
+            reserved.
           </div>
           <div>Built for performance • Static-first • Vercel-ready</div>
         </div>
@@ -75,4 +95,3 @@ export function SiteFooter() {
     </footer>
   );
 }
-
