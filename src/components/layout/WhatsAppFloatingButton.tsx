@@ -20,7 +20,7 @@ export function WhatsAppFloatingButton({
       rel="noopener noreferrer"
       aria-label="Chat on WhatsApp"
       className={cn(
-        "fixed bottom-3 right-5 z-50 inline-flex items-center gap-2 rounded-2xl bg-[#25D366] px-4 py-3 text-sm font-bold text-white shadow-[0_18px_50px_rgba(2,6,23,0.25)] transition-transform hover:scale-[1.02] active:scale-[0.98]",
+        "fixed bottom-[max(1rem,env(safe-area-inset-bottom))] right-[max(1rem,env(safe-area-inset-right))] z-50 inline-flex items-center gap-2 rounded-full bg-[#25D366] px-3 py-3 text-sm font-bold text-white shadow-[0_18px_50px_rgba(2,6,23,0.25)] transition-transform hover:scale-[1.02] active:scale-[0.98] sm:bottom-5 sm:right-5 sm:rounded-2xl sm:px-4",
         className,
       )}
     >
