@@ -11,7 +11,7 @@ const nav = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/products", label: "Products & Services" },
-  { href: "/projects", label: "Projects / Clients" },
+  // { href: "/projects", label: "Projects / Clients" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -35,21 +35,27 @@ export function SiteHeader({
             <div className="text-sm font-extrabold tracking-tight text-ae-black">
               {companyName}
             </div>
-            <div className="text-xs text-slate-600">Security • Networking • IT</div>
+            <div className="text-xs text-slate-600">
+              Security • Networking • IT
+            </div>
           </div>
         </Link>
 
         <nav className="hidden items-center gap-1 md:flex">
           {nav.map((item) => {
             const active =
-              item.href === "/" ? pathname === "/" : pathname.startsWith(item.href);
+              item.href === "/"
+                ? pathname === "/"
+                : pathname.startsWith(item.href);
             return (
               <Link
                 key={item.href}
                 href={item.href}
                 className={cn(
                   "rounded-xl px-3 py-2 text-sm font-semibold tracking-tight transition-colors",
-                  active ? "bg-black/5 text-ae-black" : "text-slate-700 hover:bg-black/5",
+                  active
+                    ? "bg-black/5 text-ae-black"
+                    : "text-slate-700 hover:bg-black/5",
                 )}
               >
                 {item.label}
@@ -86,22 +92,31 @@ export function SiteHeader({
         </div>
       </div>
 
-      <div id="mobile-nav" className="hidden border-t border-black/10 md:hidden">
+      <div
+        id="mobile-nav"
+        className="hidden border-t border-black/10 md:hidden"
+      >
         <div className="mx-auto max-w-6xl px-4 py-3 sm:px-6">
           <div className="grid gap-1">
             {nav.map((item) => {
               const active =
-                item.href === "/" ? pathname === "/" : pathname.startsWith(item.href);
+                item.href === "/"
+                  ? pathname === "/"
+                  : pathname.startsWith(item.href);
               return (
                 <Link
                   key={item.href}
                   href={item.href}
                   className={cn(
                     "rounded-xl px-3 py-2 text-sm font-semibold tracking-tight transition-colors",
-                    active ? "bg-black/5 text-ae-black" : "text-slate-700 hover:bg-black/5",
+                    active
+                      ? "bg-black/5 text-ae-black"
+                      : "text-slate-700 hover:bg-black/5",
                   )}
                   onClick={() => {
-                    document.getElementById("mobile-nav")?.classList.add("hidden");
+                    document
+                      .getElementById("mobile-nav")
+                      ?.classList.add("hidden");
                   }}
                 >
                   {item.label}
@@ -130,4 +145,3 @@ export function SiteHeader({
     </header>
   );
 }
-
