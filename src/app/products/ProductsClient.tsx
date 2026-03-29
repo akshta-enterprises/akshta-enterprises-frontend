@@ -99,7 +99,7 @@ export function ProductsClient({
           </h1>
           <p className="mt-3 max-w-2xl text-base leading-7 text-slate-600">
             Display-only catalog. Filter by brand and category, or search by
-            product name and keywords. Some items link to Amazon (external).
+            product name and keywords.
           </p>
         </MotionInView>
 
