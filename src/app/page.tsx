@@ -235,7 +235,7 @@ function HomeLanding() {
                     <div className="pt-2">
                       <div className="font-bold text-ae-black">Address</div>
                       <div className="mt-1 text-slate-600">
-                        {contact.addressLines.join(", ")}
+                        {contact.addressLines.join(" ")}
                       </div>
                     </div>
                   </div>

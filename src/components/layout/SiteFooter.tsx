@@ -8,7 +8,7 @@ export function SiteFooter() {
 
   return (
     <footer className="border-t border-black/10 bg-white/40">
-      <Container className="py-12">
+      <Container className="py-12 pb-18">
         <div className="grid gap-10 md:grid-cols-3">
           <div>
             <div className="text-lg font-extrabold tracking-tight text-ae-black">
@@ -89,7 +89,14 @@ export function SiteFooter() {
             © {new Date().getFullYear()} {contact.companyName}. All rights
             reserved.
           </div>
-          <div>Built for performance • Static-first • Vercel-ready</div>
+          <Link
+            href="https://rauhansheikh.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-ae-blue hover:underline"
+          >
+            <div>Built for performance by Rauhan Sheikh</div>
+          </Link>
         </div>
       </Container>
     </footer>

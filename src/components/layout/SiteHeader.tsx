@@ -6,6 +6,7 @@ import { Bars3Icon } from "@heroicons/react/24/outline";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/Button";
 import { buildWhatsAppLink } from "@/lib/whatsapp";
+import Image from "next/image";
 
 const nav = [
   { href: "/", label: "Home" },
@@ -28,7 +29,7 @@ export function SiteHeader({
     <header className="sticky top-0 z-50 border-b border-black/10 bg-white/70 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
         <Link href="/" className="group flex items-center gap-3">
-          <div className="h-10 w-10 rounded-2xl bg-ae-black text-white grid place-items-center shadow-sm ring-1 ring-black/10">
+          {/* <div className="h-10 w-10 rounded-2xl bg-ae-black text-white grid place-items-center shadow-sm ring-1 ring-black/10">
             <span className="text-sm font-extrabold tracking-tight">AE</span>
           </div>
           <div className="leading-tight">
@@ -38,6 +39,15 @@ export function SiteHeader({
             <div className="text-xs text-slate-600">
               Security • Networking • IT
             </div>
+          </div> */}
+          <div className="h-8 sm:h-10 md:h-16 flex items-center">
+            <Image
+              src="/logo5.jpeg"
+              alt={`${companyName} Logo`}
+              width={200}
+              height={80}
+              className="h-full w-auto object-contain"
+            />
           </div>
         </Link>
 
