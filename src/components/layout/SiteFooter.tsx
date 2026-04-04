@@ -43,11 +43,11 @@ export function SiteFooter() {
                   Products & Services
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link className="hover:underline" href="/projects">
                   Projects / Clients
                 </Link>
-              </li>
+              </li> */}
               <li>
                 <Link className="hover:underline" href="/about">
                   About
