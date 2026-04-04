@@ -160,15 +160,20 @@ function HomeLanding() {
           <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
             {brands.map((b, idx) => (
               <MotionInView key={b.id} delay={0.02 * idx}>
-                <Card className="flex items-center justify-center p-4 hover:shadow-[0_16px_40px_rgba(2,6,23,0.10)] transition-shadow">
-                  <Image
-                    src={b.logo}
-                    alt={`${b.name} logo`}
-                    width={180}
-                    height={72}
-                    className="h-10 w-auto opacity-95"
-                  />
-                </Card>
+                <Link
+                  href={`/products?brand=${encodeURIComponent(b.id)}`}
+                  className="block"
+                >
+                  <Card className="flex items-center justify-center p-4 hover:shadow-[0_16px_40px_rgba(2,6,23,0.10)] transition-shadow">
+                    <Image
+                      src={b.logo}
+                      alt={`${b.name} logo`}
+                      width={180}
+                      height={72}
+                      className="h-10 w-auto opacity-95"
+                    />
+                  </Card>
+                </Link>
               </MotionInView>
             ))}
           </div>

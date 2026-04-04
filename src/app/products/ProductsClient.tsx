@@ -20,6 +20,53 @@ function normalize(s: string) {
   return s.trim().toLowerCase();
 }
 
+function shuffleArray<T>(array: T[]): T[] {
+  const copy = [...array];
+  for (let i = copy.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [copy[i], copy[j]] = [copy[j], copy[i]];
+  }
+  return copy;
+}
+
+function interleaveByBrand(products: Product[]): Product[] {
+  // 1. Group by brand
+  const brandMap = new Map<string, Product[]>();
+
+  for (const p of products) {
+    if (!brandMap.has(p.brandId)) {
+      brandMap.set(p.brandId, []);
+    }
+    brandMap.get(p.brandId)!.push(p);
+  }
+
+  // 2. Shuffle inside each brand (important!)
+  for (const [key, list] of brandMap) {
+    brandMap.set(key, shuffleArray(list));
+  }
+
+  // 3. Convert to array of queues
+  const queues = Array.from(brandMap.values());
+
+  const result: Product[] = [];
+
+  // 4. Round-robin pick
+  let stillHasItems = true;
+
+  while (stillHasItems) {
+    stillHasItems = false;
+
+    for (const queue of queues) {
+      if (queue.length > 0) {
+        result.push(queue.shift()!);
+        stillHasItems = true;
+      }
+    }
+  }
+
+  return result;
+}
+
 export function ProductsClient({
   products,
   brands,
@@ -29,6 +76,9 @@ export function ProductsClient({
 }) {
   const searchParams = useSearchParams();
   const router = useRouter();
+
+  // const [shuffledProducts] = useState(() => shuffleArray(products));
+  const [orderedProducts] = useState(() => interleaveByBrand(products));
 
   const categories = useMemo(() => {
     return Array.from(new Set(products.map((p) => p.category))).sort((a, b) =>
@@ -63,7 +113,7 @@ export function ProductsClient({
 
   const filtered = useMemo(() => {
     const q = normalize(query);
-    return products.filter((p) => {
+    return orderedProducts.filter((p) => {
       if (brandId !== "all" && p.brandId !== brandId) return false;
       if (category !== "all" && p.category !== category) return false;
       if (!q) return true;
@@ -73,7 +123,7 @@ export function ProductsClient({
       );
       return haystack.includes(q);
     });
-  }, [products, query, brandId, category]);
+  }, [orderedProducts, query, brandId, category]);
 
   const brandById = useMemo(() => {
     const map = new Map(brands.map((b) => [b.id, b]));
