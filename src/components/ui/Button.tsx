@@ -33,7 +33,7 @@ export function Button({
   disabled?: boolean;
 }) {
   const base =
-    "inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold tracking-tight transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ae-blue/30 focus-visible:ring-offset-2 focus-visible:ring-offset-white disabled:opacity-60 disabled:pointer-events-none";
+    "inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold tracking-tight transition-all cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ae-blue/30 focus-visible:ring-offset-2 focus-visible:ring-offset-white disabled:opacity-60 disabled:pointer-events-none";
 
   if (href) {
     const isExternal = href.startsWith("http");
