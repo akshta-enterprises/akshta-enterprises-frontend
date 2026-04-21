@@ -11,19 +11,19 @@ export const metadata: Metadata = {
     icon: "public/logo4.PNG",
   },
   title: {
-    default: "Akshata Enterprises | Security, Networking & IT Hardware",
-    template: "%s | Akshata Enterprises",
+    default: "Akshta Enterprises | Security, Networking & IT Hardware",
+    template: "%s | Akshta Enterprises",
   },
   description:
-    "Akshata Enterprises is a distributor of security, networking, and IT hardware products in India. CCTV, networking, access control, and professional supply support.",
-  applicationName: "Akshata Enterprises",
+    "Akshta Enterprises is a distributor of security, networking, and IT hardware products in India. CCTV, networking, access control, and professional supply support.",
+  applicationName: "Akshta Enterprises",
   metadataBase: new URL(
     process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
   ),
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
-    title: "Akshata Enterprises",
+    title: "Akshta Enterprises",
     description:
       "Distributor of security, networking, and IT hardware products in India.",
     url: "/",

@@ -42,11 +42,11 @@ export function SiteHeader({
           </div> */}
           <div className="h-8 sm:h-10 md:h-16 flex items-center">
             <Image
-              src="/logo5.jpeg"
+              src="/akshta_logo_blue.png"
               alt={`${companyName} Logo`}
               width={200}
-              height={80}
-              className="h-full w-auto object-contain"
+              height={40}
+              className="h-10 w-auto object-contain"
             />
           </div>
         </Link>
