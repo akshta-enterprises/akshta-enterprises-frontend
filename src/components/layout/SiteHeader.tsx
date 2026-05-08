@@ -11,8 +11,7 @@ import Image from "next/image";
 const nav = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
-  { href: "/products", label: "Products & Services" },
-  // { href: "/projects", label: "Projects / Clients" },
+  { href: "/catalogue", label: "Product Catalogues" },
   { href: "/contact", label: "Contact" },
 ];
 

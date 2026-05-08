@@ -2,6 +2,7 @@ export type Brand = {
   id: string;
   name: string;
   logo: string; // public path
+  pdfs?: Record<string, string>; // key: PDF name, value: public path
 };
 
 // export type Product = {

@@ -8,7 +8,7 @@ import {
   ArrowRightIcon,
   BuildingOffice2Icon,
 } from "@heroicons/react/24/outline";
-import { getBrands, getContact, getProducts } from "@/lib/data";
+import { getBrands, getContact } from "@/lib/data";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
@@ -19,12 +19,15 @@ import { buildWhatsAppLink } from "@/lib/whatsapp";
 function HomeLanding() {
   const contact = getContact();
   const brands = getBrands();
-  const products = getProducts();
 
-  const categories = Array.from(new Set(products.map((p) => p.category))).slice(
-    0,
-    6,
-  );
+  const categories = [
+    "Network Cameras",
+    "Display",
+    "Storage",
+    "Networking",
+    "IT Hardware",
+    "Access Control",
+  ];
 
   return (
     <div>
@@ -109,7 +112,7 @@ function HomeLanding() {
                     {categories.slice(0, 4).map((cat) => (
                       <Link
                         key={cat}
-                        href={`/products?category=${encodeURIComponent(cat)}`}
+                        href={`/catalogue`}
                         className="group rounded-2xl border border-black/10 bg-white/70 p-4 transition-all hover:-translate-y-0.5 hover:shadow-[0_14px_34px_rgba(2,6,23,0.10)]"
                       >
                         <div className="text-sm font-extrabold tracking-tight text-ae-black">

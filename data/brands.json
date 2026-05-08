@@ -1,32 +1,42 @@
 [
   {
-    "id": "cpplus",
-    "name": "CP Plus",
-    "logo": "/brands/cpplus.webp"
-  },
-  {
     "id": "hikvision",
     "name": "Hikvision",
-    "logo": "/brands/hikvision.svg"
+    "logo": "/brands/hikvision.svg",
+    "pdfs": {
+      "Hikvision Catalogue": "/catalogues/Hikvision_USA_PQG_2024.pdf"
+    }
   },
   {
     "id": "dahua",
     "name": "Dahua",
-    "logo": "/brands/dahua.png"
-  },
-  {
-    "id": "tplink",
-    "name": "TP-Link",
-    "logo": "/brands/tplink.svg"
+    "logo": "/brands/dahua.png",
+    "pdfs": {
+      "Dahua LED Display": "/catalogues/Dahua_LED Display Solutions_2026.pdf"
+    }
   },
   {
     "id": "cisco",
     "name": "Cisco",
-    "logo": "/brands/cisco.svg"
+    "logo": "/brands/cisco.svg",
+    "pdfs": {
+      "Cisco Catalog": "/catalogues/cisco-start-catalog-connect.pdf"
+    }
   },
   {
-    "id": "ubiquiti",
-    "name": "Ubiquiti",
-    "logo": "/brands/ubiquiti.svg"
+    "id": "dlink",
+    "name": "D-Link",
+    "logo": "/brands/dlink.png",
+    "pdfs": {
+      "D-Link Catalogue": "/catalogues/DLink Product Guide.pdf"
+    }
+  },
+  {
+    "id": "delton",
+    "name": "Delton",
+    "logo": "/brands/delton.png",
+    "pdfs": {
+      "Delton SCS Catalogue": "/catalogues/Delton-SCS.pdf"
+    }
   }
 ]
