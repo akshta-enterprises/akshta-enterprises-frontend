@@ -15,7 +15,7 @@ export function SectionHeading({
     <div className={cn("max-w-2xl", className)}>
       {eyebrow ? (
         <div className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/60 px-3 py-1 text-xs font-bold text-slate-700">
-          <span className="h-2 w-2 rounded-full bg-ae-red" />
+          <span className="h-2 w-2 rounded-full bg-green-500" />
           {eyebrow}
         </div>
       ) : null}
@@ -28,4 +28,3 @@ export function SectionHeading({
     </div>
   );
 }
-

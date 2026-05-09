@@ -2,7 +2,7 @@
   {
     "id": "hikvision",
     "name": "Hikvision",
-    "logo": "/brands/hikvision.svg",
+    "logo": "/brands/Hikvision_logo.svg",
     "pdfs": {
       "Hikvision Catalogue": "/catalogues/Hikvision_USA_PQG_2024.pdf"
     }
@@ -18,7 +18,7 @@
   {
     "id": "cisco",
     "name": "Cisco",
-    "logo": "/brands/cisco.svg",
+    "logo": "/brands/Cisco_logo.svg",
     "pdfs": {
       "Cisco Catalog": "/catalogues/cisco-start-catalog-connect.pdf"
     }
@@ -26,7 +26,7 @@
   {
     "id": "dlink",
     "name": "D-Link",
-    "logo": "/brands/dlink.png",
+    "logo": "/brands/D-Link.svg",
     "pdfs": {
       "D-Link Catalogue": "/catalogues/DLink Product Guide.pdf"
     }
@@ -34,9 +34,50 @@
   {
     "id": "delton",
     "name": "Delton",
-    "logo": "/brands/delton.png",
+    "logo": "/brands/Delton-logo_24.svg",
     "pdfs": {
       "Delton SCS Catalogue": "/catalogues/Delton-SCS.pdf"
+    }
+  },
+  {
+    "id": "hpe",
+    "name": "HPE",
+    "logo": "/brands/Hewlett_Packard_Enterprise.svg",
+    "pdfs": {
+      "HPE Catalog": "/catalogues/HPE.pdf"
+    }
+  },
+  {
+    "id": "netgear",
+    "name": "Netgear",
+    "logo": "/brands/Netgear-Logo.svg",
+    "pdfs": {
+      "Netgear Catalog": "/catalogues/Netgear.pdf"
+    }
+  },
+  {
+    "id": "samsung",
+    "name": "Samsung",
+    "logo": "/brands/Samsung-Logo.svg",
+    "pdfs": {
+      "Samsung Retail Display Solutions": "/catalogues/samsung-retail-display-solutions-catalogue.pdf",
+      "Samsung Digial Display Solutions": "/catalogues/Samsung-DIGITAL_2024_Display_Solutions_Catalogue_2.pdf"
+    }
+  },
+  {
+    "id": "seagate",
+    "name": "Seagate",
+    "logo": "/brands/Seagate_Technology-Logo.svg",
+    "pdfs": {
+      "Seagate Catalog": "/catalogues/Seagate surveillance-hdd.pdf"
+    }
+  },
+  {
+    "id": "western-digital",
+    "name": "Western Digital",
+    "logo": "/brands/Western_Digital-Logo.svg",
+    "pdfs": {
+      "Western Digital Catalog": "/catalogues/Western Digital_brochure.pdf"
     }
   }
 ]

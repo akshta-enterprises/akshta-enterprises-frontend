@@ -10,7 +10,7 @@
   --ae-fg: #0b1220;
   --ae-muted: #475569;
 
-  --ae-border: rgba(15, 23, 42, 0.10);
+  --ae-border: rgba(15, 23, 42, 0.1);
   --ae-card: rgba(255, 255, 255, 0.75);
   --ae-card-strong: rgba(255, 255, 255, 0.92);
 
@@ -26,7 +26,20 @@
   --color-ae-black: var(--ae-black);
 
   /* Inter is bundled via @fontsource-variable/inter (see layout.tsx). */
-  --font-sans: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  --font-sans:
+    Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+
+  /* --- Marquee Animation v4 --- */
+  --animate-marquee: marquee 50s linear infinite;
+
+  @keyframes marquee {
+    from {
+      transform: translate3d(0, 0, 0);
+    }
+    to {
+      transform: translate3d(-50%, 0, 0);
+    }
+  }
 }
 
 html,
@@ -36,8 +49,16 @@ body {
 
 body {
   background:
-    radial-gradient(1200px 600px at 10% 0%, rgba(37, 99, 235, 0.12), transparent 55%),
-    radial-gradient(900px 520px at 90% 10%, rgba(220, 38, 38, 0.10), transparent 55%),
+    radial-gradient(
+      1200px 600px at 10% 0%,
+      rgba(37, 99, 235, 0.12),
+      transparent 55%
+    ),
+    radial-gradient(
+      900px 520px at 90% 10%,
+      rgba(220, 38, 38, 0.1),
+      transparent 55%
+    ),
     linear-gradient(#ffffff, #ffffff);
   color: var(--ae-fg);
 }

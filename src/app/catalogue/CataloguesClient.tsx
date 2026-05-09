@@ -4,6 +4,7 @@ import { Card } from "@/components/ui/Card";
 import { Container } from "@/components/ui/Container";
 import { MotionInView } from "@/components/ui/MotionInView";
 import { Brand } from "@/lib/types";
+import { useRouter, usePathname, useSearchParams } from "next/navigation";
 
 const preloadedPdfs = new Set<string>();
 
@@ -31,13 +32,29 @@ function normalize(s: string) {
 }
 
 export function CataloguesClient({ brands }: { brands: Brand[] }) {
-  const [query, setQuery] = useState("");
+  const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+  const [query, setQuery] = useState(searchParams.get("q") || "");
   const [activeBrand, setActiveBrand] = useState<null | {
     name: string;
     catalogs: { title: string; url: string }[];
   }>(null);
   const [activePdf, setActivePdf] = useState<string | null>(null);
   const [isPdfLoading, setIsPdfLoading] = useState(false);
+
+  const handleSearch = (val: string) => {
+    setQuery(val);
+
+    const params = new URLSearchParams(searchParams);
+    if (val) {
+      params.set("q", val); // 'q' makes more sense for brand + catalogue search
+    } else {
+      params.delete("q");
+    }
+
+    router.replace(`${pathname}?${params.toString()}`, { scroll: false });
+  };
 
   //  preload PDFs of active brand when opened
   useEffect(() => {
@@ -112,13 +129,13 @@ export function CataloguesClient({ brands }: { brands: Brand[] }) {
           <div className="flex items-center gap-2 rounded-2xl border px-4 py-3">
             <input
               value={query}
-              onChange={(e) => setQuery(e.target.value)}
+              onChange={(e) => handleSearch(e.target.value)}
               placeholder="Search brands or catalogues..."
               className="w-full bg-transparent text-sm focus:outline-none"
             />
             {query && (
               <button
-                onClick={() => setQuery("")}
+                onClick={() => handleSearch("")}
                 className="text-sm text-slate-500 hover:text-slate-700"
               >
                 Clear
@@ -198,7 +215,7 @@ export function CataloguesClient({ brands }: { brands: Brand[] }) {
                     setIsPdfLoading(true);
                     setActivePdf(c.url);
                   }}
-                  className="text-left border p-3 rounded-lg hover:bg-slate-50 transition"
+                  className="text-left border p-3 rounded-lg hover:bg-slate-50 transition cursor-pointer"
                 >
                   📄 {c.title}
                 </button>
@@ -207,7 +224,7 @@ export function CataloguesClient({ brands }: { brands: Brand[] }) {
 
             <button
               onClick={() => setActiveBrand(null)}
-              className="mt-4 text-sm text-slate-500 hover:text-slate-700"
+              className="cursor-pointer mt-4 text-sm text-slate-500 hover:text-slate-700"
             >
               Close
             </button>

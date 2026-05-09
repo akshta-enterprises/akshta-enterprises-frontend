@@ -149,36 +149,48 @@ function HomeLanding() {
         </Container>
       </section>
 
-      {/* Brands */}
-      <section className="py-14 sm:py-16">
+      {/* Brands carousel */}
+      <section className="py-14 sm:py-16 overflow-hidden">
+        {" "}
+        {/* Added overflow-hidden */}
         <Container>
           <MotionInView>
             <SectionHeading
               eyebrow="Trusted brands"
               title="Products you can rely on"
-              description="We work with leading security and networking brands to ensure dependable performance and availability."
+              description="We work with leading security and networking brands..."
             />
           </MotionInView>
 
-          <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
-            {brands.map((b, idx) => (
-              <MotionInView key={b.id} delay={0.02 * idx}>
+          {/* Marquee Wrapper */}
+          <div className="relative mt-8 w-full overflow-hidden">
+            {/* 
+         We double the array [...brands, ...brands] to create 
+         the "infinite" loop effect. 
+      */}
+            <div className="flex w-max animate-marquee gap-6 pr-6 py-4 hover:[animation-play-state:paused]">
+              {[...brands, ...brands, ...brands, ...brands].map((b, idx) => (
                 <Link
-                  href={`/products?brand=${encodeURIComponent(b.id)}`}
-                  className="block"
+                  key={`${b.id}-${idx}`} // Unique key for cloned items
+                  href={`/catalogue?q=${encodeURIComponent(b.name)}`}
+                  className="w-48 shrink-0 block" // Fixed width ensures they stay in a row
                 >
-                  <Card className="flex items-center justify-center p-4 hover:shadow-[0_16px_40px_rgba(2,6,23,0.10)] transition-shadow">
+                  <Card className="relative flex items-center justify-center p-4 h-24 w-full hover:shadow-lg transition-shadow overflow-hidden">
                     <Image
                       src={b.logo}
                       alt={`${b.name} logo`}
-                      width={180}
-                      height={72}
-                      className="h-10 w-auto opacity-95"
+                      fill
+                      className="object-contain p-4 transition opacity-95 hover:opacity-100"
+                      sizes="192px"
                     />
                   </Card>
                 </Link>
-              </MotionInView>
-            ))}
+              ))}
+            </div>
+
+            {/* Optional: Gradient Fades on the edges for a "premium" look */}
+            <div className="pointer-events-none absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-white to-transparent z-10" />
+            <div className="pointer-events-none absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-white to-transparent z-10" />
           </div>
         </Container>
       </section>

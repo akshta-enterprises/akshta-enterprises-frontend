@@ -39,7 +39,7 @@ export function SiteFooter() {
             <div className="text-sm font-bold text-ae-black">Quick Links</div>
             <ul className="mt-3 grid gap-2 text-sm text-slate-700">
               <li>
-                <Link className="hover:underline" href="/products">
+                <Link className="hover:underline" href="/catalogue">
                   Products & Services
                 </Link>
               </li>

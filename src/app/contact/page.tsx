@@ -6,7 +6,7 @@ import {
   EnvelopeIcon,
   ClockIcon,
 } from "@heroicons/react/24/outline";
-import { getContact, getProducts } from "@/lib/data";
+import { getContact } from "@/lib/data";
 import { Container } from "@/components/ui/Container";
 import { Card } from "@/components/ui/Card";
 import { MotionInView } from "@/components/ui/MotionInView";
@@ -23,10 +23,13 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   const contact = getContact();
-  const products = getProducts();
-  const categories = Array.from(new Set(products.map((p) => p.category))).sort(
-    (a, b) => a.localeCompare(b),
-  );
+  const categories = [
+    "Network Cameras",
+    "CCTV Systems",
+    "Cables & Accessories",
+    "Display Solutions",
+    "Storage Devices",
+  ];
 
   const interestOptions = ["General Enquiry", ...categories];
 
@@ -146,7 +149,7 @@ export default function ContactPage() {
                       Use the embedded map for directions.
                     </p>
                   </div>
-                  <div className="aspect-[4/3] w-full border-t border-black/10 bg-slate-100">
+                  <div className="aspect-4/3 w-full border-t border-black/10 bg-slate-100">
                     <iframe
                       title={`${contact.companyName} on Google Maps`}
                       src={contact.mapEmbedUrl}
