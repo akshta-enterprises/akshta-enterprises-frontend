@@ -3,7 +3,7 @@ export type Brand = {
   name: string;
   logo: string; // public path
   pdfs?: {
-    [key: string]: string | undefined;
+    [key: string]: string;
   };
 };
 
