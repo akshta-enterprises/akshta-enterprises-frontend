@@ -8,7 +8,7 @@ import { WhatsAppFloatingButton } from "@/components/layout/WhatsAppFloatingButt
 
 export const metadata: Metadata = {
   icons: {
-    icon: "public/logo4.PNG",
+    icon: "/logo4.PNG",
   },
   title: {
     default: "Akshta Enterprises | Security, Networking & IT Hardware",
@@ -18,19 +18,36 @@ export const metadata: Metadata = {
     "Akshta Enterprises is a distributor of security, networking, and IT hardware products in India. CCTV, networking, access control, and professional supply support.",
   applicationName: "Akshta Enterprises",
   metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
+    process.env.NEXT_PUBLIC_SITE_URL ?? "https://akshtaenterprises.com",
   ),
   alternates: { canonical: "/" },
+
   openGraph: {
     type: "website",
     title: "Akshta Enterprises",
     description:
       "Distributor of security, networking, and IT hardware products in India.",
     url: "/",
+    siteName: "Akshta Enterprises",
+    images: [
+      {
+        url: "/akshta_logo_blue.png",
+        width: 1200,
+        height: 630,
+        alt: "Akshta Enterprises Logo",
+      },
+    ],
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 };
 
