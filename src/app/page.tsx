@@ -173,15 +173,15 @@ function HomeLanding() {
                 <Link
                   key={`${b.id}-${idx}`} // Unique key for cloned items
                   href={`/catalogue?q=${encodeURIComponent(b.name)}`}
-                  className="w-48 shrink-0 block" // Fixed width ensures they stay in a row
+                  className="w-32 sm:w-48 shrink-0 block" // Fixed width ensures they stay in a row
                 >
-                  <Card className="relative flex items-center justify-center p-4 h-24 w-full hover:shadow-lg transition-shadow overflow-hidden">
+                  <Card className="relative flex items-center justify-center p-2 sm:p-4 h-16 sm:h-24 w-full hover:shadow-lg transition-shadow overflow-hidden">
                     <Image
                       src={b.logo}
                       alt={`${b.name} logo`}
                       fill
-                      className="object-contain p-4 transition opacity-95 hover:opacity-100"
-                      sizes="192px"
+                      className="object-contain p-2 sm:p-4 transition opacity-95 hover:opacity-100"
+                      sizes="(max-width: 640px) 128px, 192px"
                     />
                   </Card>
                 </Link>
