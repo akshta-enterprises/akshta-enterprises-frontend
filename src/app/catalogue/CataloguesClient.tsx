@@ -92,8 +92,9 @@ export function CataloguesClient({ brands }: { brands: Brand[] }) {
 
   // 🔹 Handle click
   const handleOpen = (brand: (typeof brandsWithCatalogs)[number]) => {
-    if (brand.catalogs.length === 1) {
-      const url = brand.catalogs[0].url;
+    const firstCatalog = brand.catalogs[0];
+    if (brand.catalogs.length === 1 && firstCatalog?.url) {
+      const url = firstCatalog.url;
 
       preloadPdf(url); // 🔥 preload
       setIsPdfLoading(true);
@@ -211,9 +212,11 @@ export function CataloguesClient({ brands }: { brands: Brand[] }) {
                 <button
                   key={c.title}
                   onClick={() => {
-                    preloadPdf(c.url); // 🔥 preload
-                    setIsPdfLoading(true);
-                    setActivePdf(c.url);
+                    if (c.url) {
+                      preloadPdf(c.url); // 🔥 preload
+                      setIsPdfLoading(true);
+                      setActivePdf(c.url);
+                    }
                   }}
                   className="text-left border p-3 rounded-lg hover:bg-slate-50 transition cursor-pointer"
                 >

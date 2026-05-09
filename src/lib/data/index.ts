@@ -8,7 +8,7 @@ import brandsJson from "../../../data/brands.json";
 import contactJson from "../../../data/contact.json";
 
 export function getBrands(): Brand[] {
-  return brandsJson as Brand[];
+  return brandsJson as unknown as Brand[];
 }
 
 export function getContact(): ContactInfo {
