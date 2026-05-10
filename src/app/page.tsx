@@ -55,7 +55,7 @@ function HomeLanding() {
               </p>
 
               <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center">
-                <Button href="/products">
+                <Button href="/catalogue">
                   Explore Products <ArrowRightIcon className="h-4 w-4" />
                 </Button>
                 <Button
@@ -128,7 +128,7 @@ function HomeLanding() {
                     ))}
                   </div>
 
-                  <div className="mt-6 rounded-2xl border border-black/10 bg-gradient-to-r from-ae-blue/10 via-white/60 to-ae-red/10 p-4">
+                  <div className="mt-6 rounded-2xl border border-black/10 bg-linear-to-r from-ae-blue/10 via-white/60 to-ae-red/10 p-4">
                     <div className="text-sm font-extrabold tracking-tight text-ae-black">
                       Need help choosing?
                     </div>
@@ -189,8 +189,8 @@ function HomeLanding() {
             </div>
 
             {/* Optional: Gradient Fades on the edges for a "premium" look */}
-            <div className="pointer-events-none absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-white to-transparent z-10" />
-            <div className="pointer-events-none absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-white to-transparent z-10" />
+            <div className="pointer-events-none absolute inset-y-0 left-0 w-20 bg-linear-to-r from-white to-transparent z-10" />
+            <div className="pointer-events-none absolute inset-y-0 right-0 w-20 bg-linear-to-l from-white to-transparent z-10" />
           </div>
         </Container>
       </section>
@@ -229,7 +229,7 @@ function HomeLanding() {
                   </div>
                 </div>
 
-                <div className="rounded-2xl border border-black/10 bg-gradient-to-br from-ae-blue/10 via-white/70 to-ae-red/10 p-6">
+                <div className="rounded-2xl border border-black/10 bg-linear-to-br from-ae-blue/10 via-white/70 to-ae-red/10 p-6">
                   <div className="text-sm font-extrabold tracking-tight text-ae-black">
                     Contact details
                   </div>
