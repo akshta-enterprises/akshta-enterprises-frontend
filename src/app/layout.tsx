@@ -8,7 +8,7 @@ import { WhatsAppFloatingButton } from "@/components/layout/WhatsAppFloatingButt
 
 export const metadata: Metadata = {
   icons: {
-    icon: "/logo4.PNG",
+    icon: "/favicon.ico",
   },
   title: {
     default: "Akshta Enterprises | Security, Networking & IT Hardware",
