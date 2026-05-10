@@ -17,9 +17,7 @@ export const metadata: Metadata = {
   description:
     "Akshta Enterprises is a distributor of security, networking, and IT hardware products in India. CCTV, networking, access control, and professional supply support.",
   applicationName: "Akshta Enterprises",
-  metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL ?? "https://akshtaenterprises.com",
-  ),
+  metadataBase: new URL("https://akshtaenterprises.com"),
   alternates: { canonical: "/" },
 
   openGraph: {
