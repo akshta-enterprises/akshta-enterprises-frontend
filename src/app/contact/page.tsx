@@ -18,7 +18,7 @@ import { ContactForm } from "@/app/contact/ContactForm";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Contact Akshata Enterprises for product availability, pricing, and procurement support. Send an enquiry via EmailJS or WhatsApp.",
+    "Contact Akshta Enterprises for product availability, pricing, and procurement support. Send an enquiry via EmailJS or WhatsApp.",
 };
 
 export default function ContactPage() {
